@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./productSlider.module.css";
+import { FaArrowRight } from 'react-icons/fa';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -98,6 +99,12 @@ const ProductSlider = () => {
     <div className={styles.sliderContainer}>
       <div className={styles.titleWrapper}>
         <h3 className={styles.title}>Shop Our Products</h3>
+        <p className={styles.productinstruction}>
+          Swipe Right to see products
+          <span className={styles.arrow}>
+            <FaArrowRight />
+          </span>
+        </p>
       </div>
 
       <div className={styles.sliderWrapper}>

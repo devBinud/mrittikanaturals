@@ -3,6 +3,8 @@
   padding: 30px 20px;
   background: linear-gradient(145deg, #fdf6ec, #e9d8c5, #f5e4d0);
   font-family: 'Georgia', 'Times New Roman', serif;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .container {

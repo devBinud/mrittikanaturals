@@ -23,6 +23,43 @@
   font-family: 'Playfair Display', serif;
   padding: 12px 0;
 }
+
+.productinstruction {
+  font-size: 0.7rem;
+  color: #fff;
+  color: #2e1c1c;
+}
+
+.productinstruction {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0px 0 13px 0px;
+  font-family: 'Montserrat', sans-serif;
+  color: #f1ecec;
+}
+
+.arrow {
+  margin-left: 8px;
+  animation: bounceRight 1s infinite;
+}
+
+@keyframes bounceRight {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(6px);
+  }
+}
+
 .clickableBox {
   text-decoration: none !important;
 }
@@ -30,6 +67,7 @@
 .clickableBox :global(*) {
   text-decoration: none !important;
 }
+
 .sliderWrapper {
   position: relative;
   display: flex;
@@ -82,14 +120,15 @@
   font-weight: 600;
   color: #2c2c2c;
   margin-bottom: 4px;
-  text-decoration: none!important; /* This removes the underline */
+  text-decoration: none !important;
+  /* This removes the underline */
 }
 
 .description {
   font-size: 0.75rem;
   font-family: 'Montserrat', sans-serif;
-  color: #b76538 ;
-  font-weight:600;
+  color: #b76538;
+  font-weight: 600;
   margin-bottom: 6px;
 }
 
@@ -122,7 +161,7 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   color: #fff;
-  text-transform:uppercase;
+  text-transform: uppercase;
   background: #4c6437;
   transition: background 0.3s ease;
 }
@@ -156,6 +195,7 @@
 }
 
 @media (min-width: 768px) {
+
   .arrowLeft,
   .arrowRight {
     display: inline-block;
