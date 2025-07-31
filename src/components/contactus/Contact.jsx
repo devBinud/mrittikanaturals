@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React, { useEffect } from 'react';
 import styles from './contact.module.css';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa';
 
@@ -50,11 +50,10 @@ const Contact = () => {
           <h2>Whatsapp Us</h2>
 
           <p style={{ fontFamily: 'Montserrat, sans-serif', marginTop: '10px' }}>
-            Want to find the perfect Mrittika Naturals products for your skin? Get a personalized skin and product consultation on <br />
+            Want to find the perfect Mrittika Naturals products for you? Get a personalized product consultation on<br />
             <strong style={{ color: '#b76538' }}>+91-9101038129 / +91 91010 38129</strong><br />
-            <span style={{ fontStyle: 'italic' }}>(Mon–Sat, 10 a.m. – 6 p.m. IST)</span>
+            <span style={{ fontStyle: 'italic' }}>(Mon–Sat, 10 A.M – 6 P.M / Sunday - 10AM -1PM)</span>
           </p>
-
 
 
           <div className={styles.mapWrapper} style={{ position: 'relative' }}>

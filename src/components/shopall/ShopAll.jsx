@@ -119,7 +119,7 @@ const ShopAll = () => {
 
   return (
     <>
-      <h2 className={styles.headingText}>
+      <h2 className={styles.nne}>
         Explore the Essence of Ayurvedic Hair Care
       </h2>
 
