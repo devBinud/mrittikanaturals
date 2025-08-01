@@ -39,11 +39,11 @@
 
 .main {
   flex: 1;
-  padding: 40px;
+  padding: 30px;
 }
 
 .heading {
-  font-size: 28px;
+  font-size: 1.3rem;
   margin-bottom: 30px;
   color: #444;
 }
@@ -69,7 +69,10 @@
   color: #555;
   margin-bottom: 10px;
 }
-
+.navList li a.active {
+  color: #d28c24;
+  font-weight: bold;
+}
 .card p {
   font-size: 24px;
   font-weight: bold;

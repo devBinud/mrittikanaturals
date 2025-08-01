@@ -92,53 +92,54 @@
 }
 
 .featuresTag {
-  background-color: #ecac8a;
-  color: #b76538;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.8rem;
-  line-height: 1.4;
-  font-weight: 600;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  padding: 0 15px;
-  border-radius: 6px;
-  text-align: center;
+    background-color: #ecac8a;
+    color: #b76538;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    font-weight: 600;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    border-radius: 6px;
+    text-align: center;
 }
 
 .featuresTag p {
-  margin: 0;
+    margin: 0;
+    color:#443c3c;
 }
 
 .icons {
-  display: flex;
-  gap: 20px;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 20px 0;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20px 0;
 }
 
 .icons div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: 'Montserrat', sans-serif;
-  color: #6a4e3a;
-  font-size: 0.85rem;
-  text-align: center;
-  padding: 10px 12px;
-  border-radius: 8px;
-  /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); */
-  transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #6a4e3a;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 10px 12px;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); */
+    transition: all 0.3s ease;
 }
 
 .icons img {
-  width: 22px;
-  height: 22px;
-  margin-bottom: 7px;
-  opacity: 0.8;
+    width: 22px;
+    height: 22px;
+    margin-bottom: 7px;
+    opacity: 0.8;
 }
 
 .description {
@@ -151,9 +152,11 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     letter-spacing: 0.5px;
+    text-decoration: none;
     display: inline-flex;
     align-items: center;
-    background-color: #25D366;
+    /* background-color: #25D366; */
+    background-color:rgb(76, 100, 55);
     /* WhatsApp green */
     color: white;
     border: none;
@@ -165,7 +168,7 @@
 }
 
 .whatsappBtn:hover {
-    background-color: #1ebe5d;
+    background-color: rgb(59, 77, 43);
 }
 
 @media (max-width: 768px) {

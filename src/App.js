@@ -13,6 +13,7 @@ import Contact from './components/contactus/Contact.jsx';
 // Admin Pages
 import Dashboard from './pages/admin/Dashboard.jsx';
 import AddProduct from './pages/admin/AddProduct.jsx';
+import AllProduct from './pages/admin/AllProduct.jsx';
 import Login from './pages/admin/Login.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
 
@@ -24,7 +25,7 @@ const App = () => (
       <Route path="/about-us" element={<About />} />
       <Route path="/shop-all" element={<ShopAll />} />
       <Route path="/all-products" element={<AllProducts />} />
-      <Route path="/product-details" element={<ProductDetails />} />
+      <Route path="/product-details/:id" element={<ProductDetails />} />
       <Route path="/product-enquiry" element={<ProductEnquiry />} />
       <Route path="/contact-us" element={<Contact />} />
 
@@ -46,6 +47,17 @@ const App = () => (
           </PrivateRoute>
         }
       />
+       <Route
+        path="/admin/all-products"
+        element={
+          <PrivateRoute>
+            <AllProduct />
+          </PrivateRoute>
+        }
+      />
+
+
+
     </Routes>
     <Footer />
   </>

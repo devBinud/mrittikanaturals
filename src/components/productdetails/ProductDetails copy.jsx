@@ -59,8 +59,6 @@ const ProductDetails = () => {
           <div className={styles.details}>
             <h1 className={styles.title}>{product.name}</h1>
 
-            <p className="text-muted mb-2"><strong>Category:</strong> {product.category || "N/A"}</p>
-
             <div className={styles.rating}>
               <span>⭐ 5.0</span>
               <span className="text-success ms-2">✅</span>
@@ -70,6 +68,10 @@ const ProductDetails = () => {
             <div className={styles.priceBlock}>
               <span className={styles.newPrice}>₹{product.price}</span>
               <span className={styles.oldPrice}>₹{product.mrp}</span>
+            </div>
+
+            <div className={styles.features}>
+              <p>{product.features || "Feature details not available."}</p>
             </div>
 
             <div className={styles.featuresTag}>
@@ -93,10 +95,7 @@ const ProductDetails = () => {
             </div>
 
             <div className={styles.description}>
-              <p><strong>Short Description:</strong> {product.description}</p>
-              {product.longDesc1 && <p><strong>More Info:</strong> {product.longDesc1}</p>}
-              {product.longDesc2 && <p>{product.longDesc2}</p>}
-              {product.longDesc3 && <p>{product.longDesc3}</p>}
+              <p>{product.description}</p>
             </div>
 
             <a
