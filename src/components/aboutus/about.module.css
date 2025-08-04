@@ -1,25 +1,24 @@
 .aboutSection {
   width: 100%;
   padding: 30px 20px;
-  /* background: linear-gradient(145deg, #fdf6ec, #e9d8c5, #f5e4d0); */
   border-bottom-left-radius: 20px;
   font-family: 'Montserrat', sans-serif;
 }
 
 .container {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
   max-width: 1200px;
   margin: 0 auto;
-  flex-wrap: wrap;
-  gap: 40px;
+  flex-wrap: nowrap;
+  gap: 0;
 }
 
 .textSection {
-  flex: 1;
-  min-width: 300px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .heading {
@@ -43,7 +42,7 @@
 
 .subtitle {
   font-size: 1.5rem;
-  color: #6b4c3b;
+  color: #2c2c2c;
   font-weight: 500;
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 4px;
@@ -51,10 +50,14 @@
 
 .subtitletwo {
   font-size: 1.2rem;
-  color: #6b4c3b;
-  font-weight: 500;
+  color: #2c2c2c;
+  font-weight: 600;
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 18px;
+}
+
+.dividerbottom {
+  padding-top: 10px !important;
 }
 
 @media (max-width: 768px) {
@@ -63,14 +66,13 @@
   }
 }
 
-/* CORRECTED: The comma has been moved outside the quote marks */
 .description {
   font-size: 1rem;
   color: #333;
-  line-height: 1.5;
+  line-height: 1.7;
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 20px;
-  max-width: 700px;
+  width: 100%;
 }
 
 .highlightedSection p {
@@ -80,7 +82,6 @@
 }
 
 @media (max-width: 768px) {
-
   .description,
   .highlightedSection p {
     font-size: 0.9rem;
@@ -92,35 +93,30 @@
   margin-bottom: 24px;
 }
 
-
-.imageSection {
-  flex: 1;
-  min-width: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 14px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-}
-
 .highlightedSection {
   font-size: 1.2rem;
   line-height: 1.9;
   font-family: 'Montserrat', sans-serif;
   color: #333;
-  max-width: 700px;
+  width: 100%;
 }
 
 .highlight {
-  color: #4c6437;
+  color: #a7572c;
   font-weight: 700;
   font-family: 'Georgia', 'Times New Roman', serif;
   letter-spacing: 0.2px;
+}
+
+.featureList {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  list-style-type: disc;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.7;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .tagline {
@@ -141,4 +137,13 @@
   font-weight: 700;
   color: #a7572c;
   font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+/* Optional: If you're no longer using image section, you can delete this block safely */
+.imageSection {
+  display: none;
+}
+
+.image {
+  display: none;
 }

@@ -46,9 +46,9 @@ const Dashboard = () => {
 
   return (
     <div className={styles.container}>
-      {/* Sidebar */}
-      <div className={styles.sidebar}>
-        <h2 className={styles.logo}>Admin</h2>
+      {/* Top Navigation */}
+      <div className={styles.topNav}>
+        <div className={styles.logo}>Admin</div>
         <ul className={styles.navList}>
           <li><a href="/admin/dashboard" className={styles.active}>Dashboard</a></li>
           <li><a href="/admin/add-product">Add Product</a></li>
@@ -56,7 +56,7 @@ const Dashboard = () => {
         </ul>
       </div>
 
-      {/* Main Content */}
+      {/* Main Section */}
       <div className={styles.main}>
         <h1 className={styles.heading}>Dashboard Overview</h1>
         <div className={styles.cards}>
@@ -67,14 +67,6 @@ const Dashboard = () => {
           <div className={styles.card}>
             <h3>Total Categories</h3>
             <p>{totalCategories}</p>
-          </div>
-          <div className={styles.card}>
-            <h3>Products Added Today</h3>
-            <p>{addedToday}</p>
-          </div>
-          <div className={styles.card}>
-            <h3>Added in Last 10 Days</h3>
-            <p>{addedLast10Days}</p>
           </div>
         </div>
       </div>

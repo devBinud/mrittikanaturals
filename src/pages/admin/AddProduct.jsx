@@ -110,14 +110,30 @@ const AddProduct = () => {
       </button>
 
       {/* Sidebar */}
-      <div className={`bg-dark text-white p-4 ${styles.sidebar} ${sidebarOpen ? 'd-block' : 'd-none'} d-md-block`}>
+      <div
+        className={`bg-dark text-white p-4 ${styles.sidebar} ${sidebarOpen ? 'd-block' : 'd-none'} d-md-block`}
+        style={{ fontFamily: 'Montserrat, sans-serif' }}
+      >
         <h2 className={styles.logo}>Admin</h2>
-        <ul className="nav flex-column" style={{marginLeft:"-14px"}}>
-          <li><a href="/admin/dashboard" className="nav-link text-white">Dashboard</a></li>
-          <li><a href="/admin/add-product" className="nav-link text-warning">Add Product</a></li>
-          <li><a href="/admin/all-products" className="nav-link text-white">Manage Products</a></li>
+        <ul className="nav flex-column admin_dashboard" style={{ marginLeft: '-14px' }}>
+          <li>
+            <a href="/admin/dashboard" className="nav-link text-white">
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="/admin/add-product" className="nav-link text-warning">
+              Add Product
+            </a>
+          </li>
+          <li>
+            <a href="/admin/all-products" className="nav-link text-white">
+              Manage Products
+            </a>
+          </li>
         </ul>
       </div>
+
 
       {/* Main Content */}
       <div className={`p-4 w-100 ${styles.main}`}>

@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './herosection.module.css';
 import { BsArrowRight } from 'react-icons/bs';
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -17,9 +18,11 @@ const HeroSection = () => {
           made from the purest ingredients — responsibly grown, gently processed, and thoughtfully crafted.
           From our farm to your home, every step honors nature’s wisdom and your well-being.
         </p>
-        <button className={styles.heroSection_button}>
-          Explore Mrittika <span className={styles.arrowIcon}><BsArrowRight /></span>
-        </button>
+        <Link to="/all-products">
+          <button className={styles.heroSection_button}>
+            Explore Mrittika <span className={styles.arrowIcon}><BsArrowRight /></span>
+          </button>
+        </Link>
       </div>
     </section>
   );

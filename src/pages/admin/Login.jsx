@@ -1,3 +1,4 @@
+// src/pages/admin/Login.jsx
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import logo from "../../assets/logo.png";
@@ -10,6 +11,7 @@ const Login = () => {
   const handleLogin = () => {
     if (username === "admin" && password === "admin123") {
       localStorage.setItem("isAdmin", "true");
+      localStorage.setItem("adminExpiry", Date.now() + 60 * 1000); // 1 minute from now
       navigate("/admin/dashboard");
     } else {
       alert("Wrong username or password");
@@ -22,6 +24,7 @@ const Login = () => {
         <div style={styles.formBox}>
           <img src={logo} alt="Admin Logo" style={styles.logo} />
           <p style={styles.subline}>Hello! Welcome Admin 👋</p>
+
           <input
             type="text"
             placeholder="Username"
@@ -84,7 +87,6 @@ const styles = {
     maxWidth: "400px",
     width: "100%",
     textAlign: "center",
-    fontFamily: "'Poppins', sans-serif",
   },
   logo: {
     width: "140px",
@@ -96,7 +98,6 @@ const styles = {
     color: "#555",
     fontSize: "16px",
     fontWeight: 600,
-    fontFamily: "'Poppins', sans-serif",
   },
   input: {
     width: "100%",
@@ -107,9 +108,7 @@ const styles = {
     marginBottom: "20px",
     outline: "none",
     transition: "border-color 0.3s",
-    fontFamily: "'Poppins', sans-serif",
   },
-
   button: {
     width: "100%",
     padding: "12px",
@@ -119,11 +118,10 @@ const styles = {
     border: "none",
     borderRadius: "4px",
     cursor: "pointer",
-    textTransform: 'uppercase',
+    textTransform: "uppercase",
     transition: "background 0.3s",
     fontWeight: "bold",
-    fontFamily: "'Poppins', sans-serif",
-    letterSpacing: "1px"
+    letterSpacing: "1px",
   },
 };
 

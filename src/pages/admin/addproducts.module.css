@@ -31,11 +31,15 @@
     text-decoration: none;
     transition: 0.3s ease;
 }
-.addProduct_title{
-    color:#272727;
-    font-size:1.2rem;
-    margin-bottom:30px
+
+.addProduct_title {
+    color: #272727;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 30px
 }
+
 .navList a:hover {
     color: #fff;
 }
@@ -62,10 +66,17 @@
     margin-bottom: 20px;
 }
 
+.admin_dashboard .nav-link {
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
 .formGroup label {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
+    font-family: 'Montserrat', sans-serif !important;
+
 }
 
 .formGroup input,

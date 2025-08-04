@@ -16,8 +16,9 @@ const Footer = () => {
       backgroundColor: '#fdfaf6',
       color: '#333',
       fontFamily: 'Montserrat, sans-serif',
-      borderTop: '1px solid #ddd',
+      boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
     }}>
+
       <div style={{
         maxWidth: '1200px',
         margin: '0 auto',

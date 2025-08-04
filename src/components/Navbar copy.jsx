@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import { motion, AnimatePresence } from 'framer-motion';
-import { AiOutlineClose } from 'react-icons/ai';
 import { MdCall } from 'react-icons/md';
 
 const Navbar = () => {
@@ -23,6 +22,7 @@ const Navbar = () => {
     'ABOUT US',
     'ALL PRODUCTS',
     'PRODUCT ENQUIRY',
+    // 'SHOP ALL',
     'CONTACT US',
   ];
 
@@ -99,7 +99,7 @@ const Navbar = () => {
           backgroundColor: '#fff',
           zIndex: 999,
           fontFamily: 'Montserrat, sans-serif',
-          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
+          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)', // subtle shadow
         }}
       >
         {/* Logo */}
@@ -186,6 +186,7 @@ const Navbar = () => {
             style={{
               fontSize: '1.8rem',
               background: 'transparent',
+              // color: '#b76538',
               color: '#121212',
               border: 'none',
               cursor: 'pointer',
@@ -196,105 +197,57 @@ const Navbar = () => {
         )}
       </nav>
 
-      {/* Mobile Drawer (Right Side) */}
-      <div
-        style={{
-          position: 'fixed',
-          top: 0,
-          right: 0,
-          height: '100%',
-          width: menuOpen ? '240px' : '0',
-          backgroundColor: '#fff',
-          overflowX: 'hidden',
-          padding: menuOpen ? '1.5rem 1rem' : '0',
-          boxShadow: menuOpen ? '-2px 0 5px rgba(0,0,0,0.2)' : 'none',
-          zIndex: 1000,
-          transition: 'width 0.3s ease-in-out, padding 0.3s ease-in-out',
-        }}
-      >
-        {menuOpen && (
-          <>
-            <button
-              onClick={() => setMenuOpen(false)}
-              style={{
-                // background: '#dc3545',
-                border: '1px solid #dfdfdfff',
-                position: 'absolute',
-                left: '10px',
-                top: '10px',
-                cursor: 'pointer',
-                color: '',
-                width: '32px',
-                height: '32px',
-                borderRadius: '50%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: 0,
-              }}
-            >
-              <AiOutlineClose size={16} />
-            </button>
-            <ul style={{ listStyle: 'none', padding: '2.5rem 0 0 0' }}>
-              {navLinks.map((name, index) => {
-                const path =
-                  name === 'HOME' ? '/' : `/${name.toLowerCase().replace(/ /g, '-')}`;
-                return (
-                  <li key={index} style={{ marginBottom: '1rem' }}>
-                    <Link
-                      to={path}
-                      style={getLinkStyle(path)}
-                      onClick={() => setMenuOpen(false)}
-                      onMouseEnter={(e) => (e.target.style.color = '#b76538')}
-                      onMouseLeave={(e) => {
-                        if (location.pathname !== path) e.target.style.color = '#222';
-                      }}
-                    >
-                      {name}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-
-            {/* Call Us Button inside Mobile */}
-            <a
-              href="tel:+919101038129"
-              style={{
-                backgroundColor: '#1f5132',
-                color: '#fff',
-                padding: '10px 16px',
-                borderRadius: '40px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '10px',
-                fontFamily: 'Montserrat, sans-serif',
-                fontSize: '0.9rem',
-                fontWeight: '600',
-                textDecoration: 'none',
-                transition: 'all 0.3s ease',
-                marginTop: '2rem',
-              }}
-            >
-              <div
-                style={{
-                  backgroundColor: '#fff',
-                  borderRadius: '50%',
-                  padding: '8px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <MdCall style={{ color: '#4c6437', fontSize: '18px' }} />
-              </div>
-              <div>
-                <div style={{ fontSize: '0.85rem' }}>Call Us <br /> +91 9101038129</div>
-              </div>
-            </a>
-          </>
-        )}
-      </div>
+      {/* Mobile Drawer */}
+      {isMobile && menuOpen && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '240px',
+            height: '100%',
+            backgroundColor: '#fff',
+            padding: '1.5rem 1rem',
+            boxShadow: '2px 0 5px rgba(0,0,0,0.2)',
+            zIndex: 1000,
+          }}
+        >
+          <button
+            onClick={() => setMenuOpen(false)}
+            style={{
+              background: 'transparent',
+              border: 'none',
+              fontSize: '1.5rem',
+              position: 'absolute',
+              right: '10px',
+              top: '10px',
+              cursor: 'pointer',
+            }}
+          >
+            ×
+          </button>
+          <ul style={{ listStyle: 'none', padding: 0 }}>
+            {navLinks.map((name, index) => {
+              const path = name === 'HOME' ? '/' : `/${name.toLowerCase().replace(/ /g, '-')}`;
+              return (
+                <li key={index} style={{ marginBottom: '1rem' }}>
+                  <Link
+                    to={path}
+                    style={getLinkStyle(path)}
+                    onClick={() => setMenuOpen(false)}
+                    onMouseEnter={(e) => (e.target.style.color = '#b76538')}
+                    onMouseLeave={(e) => {
+                      if (location.pathname !== path) e.target.style.color = '#222';
+                    }}
+                  >
+                    {name}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
     </>
   );
 };

@@ -57,14 +57,30 @@ const AllProduct = () => {
       </button>
 
       {/* Sidebar */}
-      <div className={`bg-dark text-white p-4 ${styles.sidebar} ${sidebarOpen ? 'd-block' : 'd-none'} d-md-block`}>
+      <div
+        className={`bg-dark text-white p-4 ${styles.sidebar} ${sidebarOpen ? 'd-block' : 'd-none'} d-md-block`}
+        style={{ fontFamily: 'Montserrat, sans-serif' }}
+      >
         <h4 className="mb-4">Admin</h4>
-        <ul className="nav flex-column" style={{marginLeft:"-15px"}}>
-          <li><Link className="nav-link text-white" to="/admin/dashboard">Dashboard</Link></li>
-          <li><Link className="nav-link text-white" to="/admin/add-product">Add Product</Link></li>
-          <li><Link className="nav-link active text-warning" to="/admin/all-products">Manage Products</Link></li>
+        <ul className="nav flex-column" style={{ marginLeft: '-15px' }}>
+          <li>
+            <Link className="nav-link text-white" to="/admin/dashboard">
+              Dashboard
+            </Link>
+          </li>
+          <li>
+            <Link className="nav-link text-white" to="/admin/add-product">
+              Add Product
+            </Link>
+          </li>
+          <li>
+            <Link className="nav-link active text-warning" to="/admin/all-products">
+              Manage Products
+            </Link>
+          </li>
         </ul>
       </div>
+
 
       {/* Main Content */}
       <div className={`p-4 w-100 ${styles.main}`}>
@@ -113,7 +129,7 @@ const AllProduct = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title">Product Details</h5>
-              <button type="button" className="btn-close" data-bs-dismiss="modal" />
+              <button type="button" className="btn-close shadow-none" data-bs-dismiss="modal" />
             </div>
             <div className="modal-body">
               {selectedProduct && (
@@ -137,30 +153,30 @@ const AllProduct = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title">Edit Product</h5>
-              <button type="button" className="btn-close" data-bs-dismiss="modal" id="editClose" />
+              <button type="button" className="btn-close shadow-none" data-bs-dismiss="modal" id="editClose" />
             </div>
             <div className="modal-body">
               {editProduct && (
                 <>
                   <div className="mb-2">
                     <label>Name</label>
-                    <input type="text" className="form-control" name="name" value={editProduct.name} onChange={handleEditChange} />
+                    <input type="text" className="form-control shadow-none" name="name" value={editProduct.name} onChange={handleEditChange} />
                   </div>
                   <div className="mb-2">
                     <label>MRP</label>
-                    <input type="text" className="form-control" name="mrp" value={editProduct.mrp} onChange={handleEditChange} />
+                    <input type="text" className="form-control shadow-none" name="mrp" value={editProduct.mrp} onChange={handleEditChange} />
                   </div>
                   <div className="mb-2">
                     <label>Price</label>
-                    <input type="text" className="form-control" name="price" value={editProduct.price} onChange={handleEditChange} />
+                    <input type="text" className="form-control shadow-none" name="price" value={editProduct.price} onChange={handleEditChange} />
                   </div>
                   <div className="mb-2">
                     <label>Category</label>
-                    <input type="text" className="form-control" name="category" value={editProduct.category} onChange={handleEditChange} />
+                    <input type="text" className="form-control shadow-none" name="category" value={editProduct.category} onChange={handleEditChange} />
                   </div>
                   <div className="mb-2">
                     <label>Description</label>
-                    <textarea className="form-control" name="description" value={editProduct.description} onChange={handleEditChange}></textarea>
+                    <textarea className="form-control shadow-none" name="description" value={editProduct.description} onChange={handleEditChange}></textarea>
                   </div>
                 </>
               )}
