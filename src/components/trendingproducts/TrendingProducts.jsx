@@ -7,6 +7,8 @@ import { FaWhatsapp } from "react-icons/fa";
 const TrendingProducts = () => {
     const [hairProducts, setHairProducts] = useState([]);
     const navigate = useNavigate();
+    const [isMobile, setIsMobile] = useState(false);
+
 
     useEffect(() => {
         const db = getDatabase();
@@ -22,7 +24,7 @@ const TrendingProducts = () => {
                 const filtered = productsArray.filter(
                     (product) =>
                         product.category &&
-                        product.category.toLowerCase().includes("hair")
+                        product.category.toLowerCase().includes("trending")
                 );
                 setHairProducts(filtered);
             }
@@ -30,6 +32,16 @@ const TrendingProducts = () => {
 
         return () => unsubscribe();
     }, []);
+
+    useEffect(() => {
+  const checkWidth = () => {
+    setIsMobile(window.innerWidth <= 480);
+  };
+
+  checkWidth();
+  window.addEventListener('resize', checkWidth);
+  return () => window.removeEventListener('resize', checkWidth);
+}, []);
 
     return (
         <div className={styles.container}>
@@ -48,8 +60,17 @@ const TrendingProducts = () => {
                         >
                             <div className={styles.trendingTag}>Trending</div>
                             <img src={item.image} alt={item.name} className={styles.image} />
-                            <h3 className={styles.name}>{item.name}</h3>
-                            <p className={styles.description}>{item.description}</p>
+                            <h3 className={styles.name}>
+                                {item.name.length > (isMobile ? 17 : 20)
+                                    ? item.name.slice(0, isMobile ? 17 : 20) + '...'
+                                    : item.name}
+                            </h3>
+
+                            <p className={styles.description}>
+                                {item.description.length > (isMobile ? 45 : 50)
+                                    ? item.description.slice(0, isMobile ? 45 : 50) + '...'
+                                    : item.description}
+                            </p>
                             <div className={styles.priceBox}>
                                 <span className={styles.price}>MRP {item.price}</span>
                                 <span className={styles.mrp}>MRP {item.mrp}</span>

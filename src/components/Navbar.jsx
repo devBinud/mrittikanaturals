@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png';
-import { FaSearch, FaUser, FaShoppingCart, FaHeadset, FaPhoneAlt } from 'react-icons/fa';
+// import { FaPhone } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
+import { MdCall } from 'react-icons/md';
 
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [menuOpen, setMenuOpen] = useState(false);
   const [index, setIndex] = useState(0);
   const location = useLocation();
+  const [isHovered, setIsHovered] = useState(false);
 
   const messages = [
     "Shop the hidden gems only @ ₹299* each",
@@ -21,7 +23,7 @@ const Navbar = () => {
     'ABOUT US',
     'ALL PRODUCTS',
     'PRODUCT ENQUIRY',
-    'SHOP ALL',
+    // 'SHOP ALL',
     'CONTACT US',
   ];
 
@@ -87,19 +89,18 @@ const Navbar = () => {
         </AnimatePresence>
       </div>
 
-      {/* Navbar */}
       <nav
         style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           padding: '0.2rem 1.5rem',
-          borderBottom: '1px solid #ddd',
           position: 'sticky',
           top: 0,
           backgroundColor: '#fff',
           zIndex: 999,
           fontFamily: 'Montserrat, sans-serif',
+          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)', // subtle shadow
         }}
       >
         {/* Logo */}
@@ -143,11 +144,13 @@ const Navbar = () => {
             {/* Customer Support */}
             <a
               href="tel:+919101038129"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
               style={{
-                backgroundColor: '#4c6437 ',
+                backgroundColor: isHovered ? '#144026' : '#1f5132',
                 color: '#fff',
                 padding: '10px 16px',
-                borderRadius: '8px',
+                borderRadius: '40px',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '10px',
@@ -155,6 +158,10 @@ const Navbar = () => {
                 fontSize: '0.9rem',
                 fontWeight: '600',
                 textDecoration: 'none',
+                transition: 'all 0.3s ease',
+                boxShadow: isHovered
+                  ? '0 6px 16px rgba(0,0,0,0.2)'
+                  : '0 6px 16px rgba(0,0,0,0.2)',
               }}
             >
               <div
@@ -167,11 +174,10 @@ const Navbar = () => {
                   justifyContent: 'center',
                 }}
               >
-                <FaHeadset style={{ color: '#4c6437', fontSize: '18px' }} />
+                <MdCall style={{ color: '#4c6437', fontSize: '18px' }} />
               </div>
               <div>
-                <div>Customer Support</div>
-                <div style={{ fontSize: '0.85rem' }}>+91 9101038129</div>
+                <div style={{ fontSize: '0.85rem' }}>Call Us +91 9101038129</div>
               </div>
             </a>
           </div>
@@ -181,7 +187,8 @@ const Navbar = () => {
             style={{
               fontSize: '1.8rem',
               background: 'transparent',
-              color:'#b76538',
+              // color: '#b76538',
+              color: '#121212',
               border: 'none',
               cursor: 'pointer',
             }}

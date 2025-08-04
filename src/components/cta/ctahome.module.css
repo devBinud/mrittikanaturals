@@ -1,0 +1,47 @@
+.ctaSection {
+  background-color: #1f5132;
+  color: white;
+  padding: 60px 30px;
+  text-align: center;
+  position: relative;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.ctaButton {
+  background-color: white;
+  color: #1f5132;
+  border: none;
+  padding: 12px 26px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #e6e6e6;
+}
+
+.ctaSection,
+.title,
+.subtitle,
+.ctaButton {
+  font-family: 'Montserrat', sans-serif !important;
+}
+

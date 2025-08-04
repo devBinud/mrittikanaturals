@@ -7,9 +7,8 @@ const About = () => {
     <section className={styles.aboutSection}>
       <div className={styles.container}>
         <div className={styles.textSection}>
-          <h2 className={styles.heading}>About Us</h2>
-          <p className={styles.subtitle}>Rooted in Nature, Nurtured with Care</p>
-
+          <p className={styles.subtitle}>Welcome to Mrittika Naturals</p>
+          <p className={styles.subtitletwo}>Rooted in tradition, nurtured by nature.</p>
           <p className={styles.description}>
             At Mrittika Naturals, we believe that nature holds the answers to true well-being. Inspired by the rich traditions of Indian healing and the wisdom of sustainable living, our journey began with a simple mission to bring you the purest forms of nature, untouched by harmful chemicals or synthetic shortcuts.
           </p>

@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import PublicHome from './pages/public/Home.jsx';
 import Navbar from './components/Navbar.jsx';
@@ -17,50 +17,52 @@ import AllProduct from './pages/admin/AllProduct.jsx';
 import Login from './pages/admin/Login.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
 
-const App = () => (
-  <>
-    <Navbar />
-    <Routes>
-      <Route path="/" element={<PublicHome />} />
-      <Route path="/about-us" element={<About />} />
-      <Route path="/shop-all" element={<ShopAll />} />
-      <Route path="/all-products" element={<AllProducts />} />
-      <Route path="/product-details/:id" element={<ProductDetails />} />
-      <Route path="/product-enquiry" element={<ProductEnquiry />} />
-      <Route path="/contact-us" element={<Contact />} />
+const App = () => {
+  const location = useLocation();
+  const hideHeaderFooter = location.pathname === '/admin/login';
 
-      {/* Admin Routes */}
-      <Route path="/admin/login" element={<Login />} />
-      <Route
-        path="/admin/dashboard"
-        element={
-          <PrivateRoute>
-            <Dashboard />
-          </PrivateRoute>
-        }
-      />
-      <Route
-        path="/admin/add-product"
-        element={
-          <PrivateRoute>
-            <AddProduct />
-          </PrivateRoute>
-        }
-      />
-       <Route
-        path="/admin/all-products"
-        element={
-          <PrivateRoute>
-            <AllProduct />
-          </PrivateRoute>
-        }
-      />
+  return (
+    <>
+      {!hideHeaderFooter && <Navbar />}
+      <Routes>
+        <Route path="/" element={<PublicHome />} />
+        <Route path="/about-us" element={<About />} />
+        <Route path="/shop-all" element={<ShopAll />} />
+        <Route path="/all-products" element={<AllProducts />} />
+        <Route path="/product-details/:id" element={<ProductDetails />} />
+        <Route path="/product-enquiry" element={<ProductEnquiry />} />
+        <Route path="/contact-us" element={<Contact />} />
 
-
-
-    </Routes>
-    <Footer />
-  </>
-);
+        {/* Admin Routes */}
+        <Route path="/admin/login" element={<Login />} />
+        <Route
+          path="/admin/dashboard"
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/admin/add-product"
+          element={
+            <PrivateRoute>
+              <AddProduct />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/admin/all-products"
+          element={
+            <PrivateRoute>
+              <AllProduct />
+            </PrivateRoute>
+          }
+        />
+      </Routes>
+      {!hideHeaderFooter && <Footer />}
+    </>
+  );
+};
 
 export default App;

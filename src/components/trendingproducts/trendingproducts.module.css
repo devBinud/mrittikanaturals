@@ -46,9 +46,9 @@
 }
 
 .name {
-    font-size: 18px;
+    font-size: 16px;
     margin: 12px 0 6px;
-    color: #000;
+    color: #2c2c2c;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
 }
@@ -90,7 +90,7 @@
 
 .whatsappButton {
     margin-top: 14px;
-    background-color: #25d366;
+    background-color: #1f5132;
     color: white;
     display: flex;
     align-items: center;
@@ -107,7 +107,7 @@
 }
 
 .whatsappButton:hover {
-    background-color: #1ebe5d;
+    background-color: #153823;
     /* transform: translateY(-2px); */
 }
 
@@ -122,7 +122,8 @@
 
 .whatsappButton {
     margin-top: 14px;
-    background-color: #25d366;
+    /* background-color: #25d366; */
+    background-color: #1f5132;
     color: white;
     display: flex;
     align-items: center;
@@ -165,7 +166,11 @@
     font-size: 18px;
 }
 
-
+@media screen and (min-width: 1200px) {
+    .cardGrid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
 /* Responsive */
 @media screen and (max-width: 768px) {
     .cardGrid {

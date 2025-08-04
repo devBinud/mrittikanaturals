@@ -95,7 +95,7 @@ const ProductSlider = () => {
                     <h4 className={styles.productName}>{item.name}</h4>
                     <p className={styles.description}>
                       {item.description.length > 35
-                        ? `${item.description.slice(0, 65)}...`
+                        ? `${item.description.slice(0, 62)}...`
                         : item.description}
                     </p>
 
