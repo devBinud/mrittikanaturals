@@ -34,60 +34,62 @@ const TrendingProducts = () => {
     }, []);
 
     useEffect(() => {
-  const checkWidth = () => {
-    setIsMobile(window.innerWidth <= 480);
-  };
+        const checkWidth = () => {
+            setIsMobile(window.innerWidth <= 480);
+        };
 
-  checkWidth();
-  window.addEventListener('resize', checkWidth);
-  return () => window.removeEventListener('resize', checkWidth);
-}, []);
+        checkWidth();
+        window.addEventListener('resize', checkWidth);
+        return () => window.removeEventListener('resize', checkWidth);
+    }, []);
 
     return (
         <div className={styles.container}>
             <h2 className={styles.heading}>Trending Products</h2>
             <div className={styles.cardGrid}>
-                {hairProducts.map((item) => {
-                    const whatsappLink = `https://wa.me/919706393924?text=${encodeURIComponent(
-                        `Hello, I'm interested in the following product:\n\n*${item.name}*\n${item.description}\n\nImage: ${item.image}`
-                    )}`;
+                {hairProducts
+                    .slice(0, isMobile ? 6 : 5)
+                    .map((item) => {
+                        const whatsappLink = `https://wa.me/919706393924?text=${encodeURIComponent(
+                            `Hello, I'm interested in the following product:\n\n*${item.name}*\n${item.description}\n\nImage: ${item.image}`
+                        )}`;
 
-                    return (
-                        <div
-                            key={item.id}
-                            className={styles.card}
-                            onClick={() => navigate(`/product-details/${item.id}`)}
-                        >
-                            <div className={styles.trendingTag}>Trending</div>
-                            <img src={item.image} alt={item.name} className={styles.image} />
-                            <h3 className={styles.name}>
-                                {item.name.length > (isMobile ? 17 : 20)
-                                    ? item.name.slice(0, isMobile ? 17 : 20) + '...'
-                                    : item.name}
-                            </h3>
-
-                            <p className={styles.description}>
-                                {item.description.length > (isMobile ? 45 : 50)
-                                    ? item.description.slice(0, isMobile ? 45 : 50) + '...'
-                                    : item.description}
-                            </p>
-                            <div className={styles.priceBox}>
-                                <span className={styles.price}>MRP {item.price}</span>
-                                <span className={styles.mrp}>MRP {item.mrp}</span>
-                            </div>
-                            <a
-                                href={whatsappLink}
-                                className={styles.whatsappButton}
-                                onClick={(e) => e.stopPropagation()} // prevent card click
-                                target="_blank"
-                                rel="noopener noreferrer"
+                        return (
+                            <div
+                                key={item.id}
+                                className={styles.card}
+                                onClick={() => navigate(`/product-details/${item.id}`)}
                             >
-                                <FaWhatsapp className={styles.icon} />
-                                Book Now
-                            </a>
-                        </div>
-                    );
-                })}
+                                <div className={styles.trendingTag}>Trending</div>
+                                <img src={item.image} alt={item.name} className={styles.image} />
+                                <h3 className={styles.name}>
+                                    {item.name.length > (isMobile ? 17 : 20)
+                                        ? item.name.slice(0, isMobile ? 17 : 20) + '...'
+                                        : item.name}
+                                </h3>
+
+                                <p className={styles.description}>
+                                    {item.description.length > (isMobile ? 45 : 50)
+                                        ? item.description.slice(0, isMobile ? 45 : 50) + '...'
+                                        : item.description}
+                                </p>
+                                <div className={styles.priceBox}>
+                                    <span className={styles.price}>MRP {item.price}</span>
+                                    <span className={styles.mrp}>MRP {item.mrp}</span>
+                                </div>
+                                <a
+                                    href={whatsappLink}
+                                    className={styles.whatsappButton}
+                                    onClick={(e) => e.stopPropagation()} // prevent card click
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <FaWhatsapp className={styles.icon} />
+                                    Book Now
+                                </a>
+                            </div>
+                        );
+                    })}
             </div>
         </div>
     );

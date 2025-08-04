@@ -18,7 +18,7 @@ const HeroSection = () => {
           From our farm to your home, every step honors nature’s wisdom and your well-being.
         </p>
         <button className={styles.heroSection_button}>
-          Explore Mrittika Products <span className={styles.arrowIcon}><BsArrowRight /></span>
+          Explore Mrittika <span className={styles.arrowIcon}><BsArrowRight /></span>
         </button>
       </div>
     </section>

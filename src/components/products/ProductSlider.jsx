@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import { getDatabase, ref, onValue } from "firebase/database";
 import { initializeApp } from "firebase/app";
 
-// ✅ Firebase Config
+
+// ✅ Firebase Config for my App
 const firebaseConfig = {
   apiKey: "AIzaSyAyoM6Lok3cRrogONmb5v10IYmwda1l4QY",
   authDomain: "mrittikanaturals-e0674.firebaseapp.com",

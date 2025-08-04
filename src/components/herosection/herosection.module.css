@@ -100,7 +100,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(28, 28, 28, 0.4); /* smooth dark overlay */
+  background: rgba(28, 28, 28, 0.4);
+  /* smooth dark overlay */
   z-index: 0;
 }
 
@@ -152,7 +153,9 @@
   .heroSection_heading {
     font-size: 2rem;
   }
-
+.heroSection_gradientText {
+  font-size: 2rem;
+}
   .heroSection_tagline {
     font-size: 1.2rem;
   }
@@ -162,7 +165,7 @@
   }
 
   .heroSection_content {
-    padding: 1.8rem;
+    padding: 0.1rem;
   }
 
   .heroSection_button {
@@ -173,27 +176,26 @@
 
 
 .heroSection_button {
-  /* background-color: #d28c24; */
   color: #fff;
   border: none;
-  padding: 0.9rem 2.2rem;
+  padding: 0.9rem 2rem;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  border-radius: 100px;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  border:1px dotted rgba(0,0,0,0.3);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
   letter-spacing: 0.5px;
+  background-color: rgb(183, 101, 56);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+
 }
 
 .heroSection_button:hover {
-  background-color: #b3741c;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
-  color:#fff
+  background-color: rgb(192, 104, 57);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.37);
+  color: #fff
 }
 
 .arrowIcon {
