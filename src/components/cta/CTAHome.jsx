@@ -9,7 +9,7 @@ const CTAHome = () => {
           Experience the Purity of Nature
         </h2>
         <p className={styles.subtitle}>
-          Pure – Handcrafted – Natural – Rooted
+          Pure – Natural – Rooted
         </p>
         <button className={styles.ctaButton}>View More</button>
       </div>

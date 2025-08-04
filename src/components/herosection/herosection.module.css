@@ -153,9 +153,11 @@
   .heroSection_heading {
     font-size: 2rem;
   }
-.heroSection_gradientText {
-  font-size: 2rem;
-}
+
+  .heroSection_gradientText {
+    font-size: 2rem;
+  }
+
   .heroSection_tagline {
     font-size: 1.2rem;
   }
@@ -172,13 +174,18 @@
     padding: 0.7rem 1.5rem;
     font-size: 0.95rem;
   }
+
+  .heroSection_wrapper {
+    min-height: 80vh;
+  }
+
 }
 
 
 .heroSection_button {
   color: #fff;
   border: none;
-  padding: 0.9rem 2rem;
+  padding: 0.9rem 1.5rem;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -189,6 +196,7 @@
   letter-spacing: 0.5px;
   background-color: rgb(183, 101, 56);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  border-radius:10px
 
 }
 
