@@ -83,21 +83,9 @@ const Footer = () => {
         <div style={{ flex: '1 1 150px', minWidth: '150px' }}>
           <h4 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.4rem', color: '#2c2c2c', marginBottom: '1rem' }}>Shop</h4>
           <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', lineHeight: '2.1' }}>
-            {['Skin', 'Hair', 'Bath & Body', 'Handmade Decor', 'Artisan Fragrances', 'Gift Boxes'].map(item => (
+            {['Skin', 'Hair', 'Bath & Body', 'Gift Boxes'].map(item => (
               <li key={item}>
-                <a href="#" style={{ color: '#333', textDecoration: 'none' }}>{item}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* ABOUT Links */}
-        <div style={{ flex: '1 1 150px', minWidth: '150px' }}>
-          <h4 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.4rem', color: '#2c2c2c', marginBottom: '1rem' }}>About</h4>
-          <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', lineHeight: '2.1' }}>
-            {['Our Story', 'Sustainability', 'Local Artisans', 'Ingredients'].map(item => (
-              <li key={item}>
-                <a href="#" style={{ color: '#333', textDecoration: 'none' }}>{item}</a>
+                <a href="#!" style={{ color: '#333', textDecoration: 'none' }}>{item}</a>
               </li>
             ))}
           </ul>
@@ -107,11 +95,12 @@ const Footer = () => {
         <div style={{ flex: '1 1 150px', minWidth: '150px' }}>
           <h4 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.4rem', color: '#2c2c2c', marginBottom: '1rem' }}>Help</h4>
           <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', lineHeight: '2.1' }}>
-            {['Contact Us', 'Privacy Policy', 'Shipping & Returns', 'Terms of Service', 'Track Your Order'].map(item => (
-              <li key={item}>
-                <a href="#!" style={{ color: '#333', textDecoration: 'none' }}>{item}</a>
-              </li>
-            ))}
+            <li>
+              <a href="/contact" style={{ color: '#333', textDecoration: 'none' }}>Contact Us</a>
+            </li>
+            <li>
+              <a href="/privacy-policy" style={{ color: '#333', textDecoration: 'none' }}>Privacy Policy</a>
+            </li>
           </ul>
         </div>
 

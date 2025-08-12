@@ -9,6 +9,7 @@ import AllProducts from './components/allproducts/AllProducts.jsx';
 import ProductDetails from './components/productdetails/ProductDetails.jsx';
 import Footer from './components/Footer.jsx';
 import Contact from './components/contactus/Contact.jsx';
+import PrivacyPolicy from './components/privacypolicy/PrivacyPolicy.js';
 
 // Admin Pages
 import Dashboard from './pages/admin/Dashboard.jsx';
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/" element={<PublicHome />} />
         <Route path="/about-us" element={<About />} />
         <Route path="/shop-all" element={<ShopAll />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/all-products" element={<AllProducts />} />
         <Route path="/product-details/:id" element={<ProductDetails />} />
         <Route path="/product-enquiry" element={<ProductEnquiry />} />
