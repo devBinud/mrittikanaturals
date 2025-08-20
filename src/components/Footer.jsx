@@ -52,8 +52,8 @@ const Footer = () => {
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <FaPhoneAlt style={{ color: '#b76538' }} />
-              <a href="tel:+918437048180" style={{ color: '#333', textDecoration: 'none' }}>
-                +91 84370 48180
+              <a href="tel:+916000800104" style={{ color: '#333', textDecoration: 'none' }}>
+                +91 60008 00104
               </a>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -79,17 +79,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* SHOP Links */}
-        <div style={{ flex: '1 1 150px', minWidth: '150px' }}>
-          <h4 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.4rem', color: '#2c2c2c', marginBottom: '1rem' }}>Shop</h4>
-          <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.9rem', lineHeight: '2.1' }}>
-            {['Skin', 'Hair', 'Bath & Body', 'Gift Boxes'].map(item => (
-              <li key={item}>
-                <a href="#!" style={{ color: '#333', textDecoration: 'none' }}>{item}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
 
         {/* HELP Links */}
         <div style={{ flex: '1 1 150px', minWidth: '150px' }}>

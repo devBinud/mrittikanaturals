@@ -8,15 +8,8 @@ import { MdCall } from 'react-icons/md';
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [index, setIndex] = useState(0);
   const location = useLocation();
   const [isHovered, setIsHovered] = useState(false);
-
-  const messages = [
-    "Shop the hidden gems only @ ₹299* each",
-    "Limited the deals – Don't miss out",
-    "New arrivals are here – Explore Now",
-  ];
 
   const navLinks = [
     'HOME',
@@ -32,12 +25,6 @@ const Navbar = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % messages.length);
-    }, 3000);
-    return () => clearInterval(timer);
-  }, []);
 
   const getLinkStyle = (path) => {
     const isActive = location.pathname === path;
@@ -52,42 +39,6 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Topbar */}
-      <div
-        style={{
-          background: '#b76538',
-          color: '#fff',
-          textAlign: 'center',
-          fontSize: '0.75rem',
-          padding: '0 10px',
-          fontWeight: '600',
-          fontFamily: 'Montserrat, sans-serif',
-          overflow: 'hidden',
-          height: '30px',
-          position: 'relative',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <AnimatePresence>
-          <motion.div
-            key={index}
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -30, opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            style={{
-              position: 'absolute',
-              width: '100%',
-              textTransform: 'none',
-            }}
-          >
-            {messages[index]}
-          </motion.div>
-        </AnimatePresence>
-      </div>
-
       <nav
         style={{
           display: 'flex',

@@ -25,7 +25,7 @@
 }
 
 .title {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 600;
   margin-bottom: 20px;
 }
@@ -39,10 +39,11 @@
 
 .ctaButton {
   background-color: #fff;
-  color: #1f5132;
+  color: #33463a;
   border: none;
+  font-size:14px;
   padding: 10px 30px;
-  border-radius:30px;
+  border-radius:10px;
   cursor: pointer;
   text-transform:uppercase;
   font-weight:700;
