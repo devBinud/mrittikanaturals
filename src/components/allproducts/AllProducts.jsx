@@ -21,7 +21,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-const categories = ['All', 'hair', 'Shampoo', 'Conditioner', 'Hair Oil'];
+const categories = ['All', 'Fruits', 'Vegetables', 'Spices'];
 
 
 const AllProducts = () => {
@@ -86,57 +86,69 @@ const [isMobile, setIsMobile] = useState(false);
           ))}
         </div>
 
-        <div className={styles.productsGrid}>
-          {loading ? (
-            <p>Loading products...</p>
-          ) : filteredProducts.length === 0 ? (
-            <p>No products available.</p>
-          ) : (
-            filteredProducts.map((product) => (
-              <div key={product.id} className={styles.productCard}>
-                <Link
-                  to={`/product-details/${product.id}`}
-                  className={styles.clickableBox}
-                >
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className={styles.productImage}
-                  />
-                  <h4 className={styles.productTitle}>
-                    {product.name.length > (isMobile ? 17 : 20)
-                      ? product.name.slice(0, isMobile ? 17 : 20) + '...'
-                      : product.name}
-                  </h4>
+       <div className={styles.productsGrid}>
+  {loading ? (
+    <p>Loading products...</p>
+  ) : filteredProducts.length === 0 ? (
+    <p>No products available.</p>
+  ) : (
+    [...filteredProducts]
+      .sort(() => Math.random() - 0.5) // ✅ shuffle here
+      .map((product) => (
+        <div key={product.id} className={styles.productCard}>
+          <Link
+            to={`/product-details/${product.id}`}
+            className={styles.clickableBox}
+          >
+            <img
+              src={product.image}
+              alt={product.name}
+              className={styles.productImage}
+            />
+            <h4 className={styles.productTitle}>
+              {product.name.length > (isMobile ? 17 : 20)
+                ? product.name.slice(0, isMobile ? 17 : 20) + '...'
+                : product.name}
+            </h4>
 
-                  <p className={styles.description}>
-                    {product.description.length > (isMobile ? 45 : 50)
-                      ? product.description.slice(0, isMobile ? 45 : 50) + '...'
-                      : product.description}
-                  </p>
+            <p className={styles.description}>
+              {product.description.length > (isMobile ? 45 : 50)
+                ? product.description.slice(0, isMobile ? 45 : 50) + '...'
+                : product.description}
+            </p>
 
+            <div className={styles.priceBox}>
+              <span className={styles.discountedPrice}>
+                MRP ₹{product.price}
+              </span>
+              <span className={styles.originalPrice}>
+                MRP ₹{product.mrp}
+              </span>
+            </div>
+          </Link>
 
-                  <div className={styles.priceBox}>
-                    <span className={styles.discountedPrice}>MRP ₹{product.price}</span>
-                    <span className={styles.originalPrice}>MRP ₹{product.mrp}</span>
-                  </div>
-                </Link>
-
-                <a
-                  href={`https://wa.me/919101038129?text=${encodeURIComponent(
-                    `*Hello Team Mrittika Naturals,*\n\n_I’m interested in exploring one of your natural beauty products:_\n\n✨ Product: ${product.name}\n💰 Price: ₹${product.price}\n\n_Could you please share more details about this product, including availability and booking steps?_\n\n*Looking forward to your response.*`
-                  )}`}
-                  className={styles.whatsappBtn}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaWhatsapp style={{ marginRight: '6px', fontSize: '20px', verticalAlign: 'middle' }} />
-                  Book Now
-                </a>
-              </div>
-            ))
-          )}
+          <a
+            href={`https://wa.me/919101038129?text=${encodeURIComponent(
+              `*Hello Team Mrittika Naturals,*\n\n_I’m interested in exploring one of your natural beauty products:_\n\n✨ Product: ${product.name}\n💰 Price: ₹${product.price}\n\n_Could you please share more details about this product, including availability and booking steps?_\n\n*Looking forward to your response.*`
+            )}`}
+            className={styles.whatsappBtn}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaWhatsapp
+              style={{
+                marginRight: '6px',
+                fontSize: '20px',
+                verticalAlign: 'middle',
+              }}
+            />
+            Book Now
+          </a>
         </div>
+      ))
+  )}
+</div>
+
       </div>
     </>
   );
