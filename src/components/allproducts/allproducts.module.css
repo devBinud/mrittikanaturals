@@ -42,6 +42,7 @@
   font-weight: 600;
   font-size: 0.9rem;
   color: #b76538;
+  text-align: left !important;
   text-decoration: none !important;
 }
 
@@ -51,11 +52,11 @@
   border: none;
   background-color: #f2f2f2;
   color: #333;
-  padding: 9px 25px!important;
+  padding: 9px 25px !important;
   cursor: pointer;
   font-size: 14px;
   border-radius: 50px;
-  font-weight: 700!important;
+  font-weight: 700 !important;
   transition: all 0.3s ease;
   text-align: left;
 }
@@ -81,7 +82,7 @@
   margin: 4px;
   white-space: nowrap;
   transition: background 0.3s ease, color 0.3s ease;
-  margin-bottom:20px
+  margin-bottom: 20px
 }
 
 .categoryPill:hover {
@@ -105,7 +106,8 @@
 @media (max-width: 768px) {
   .productsGrid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px; /* Smaller gap on mobile */
+    gap: 12px;
+    /* Smaller gap on mobile */
   }
 }
 
@@ -121,7 +123,8 @@
 
 .productCard {
   background: #fff;
-  border: 1px solid #eee; /* ✅ Light border */
+  border: 1px solid #eee;
+  /* ✅ Light border */
   border-radius: 10px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
   padding: 15px;
@@ -145,6 +148,7 @@
   padding: 8px 20px;
   margin-bottom: 20px;
 }
+
 @media (max-width: 768px) {
   .headingText {
     font-size: 0.93rem;
@@ -156,7 +160,9 @@
   margin: 10px 0;
   font-weight: 600;
   text-decoration: none !important;
+  text-align: left;
 }
+
 
 .priceBox {
   display: flex;
@@ -186,7 +192,7 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   color: #fff;
-  border-radius:30px;
+  border-radius: 30px;
   text-transform: uppercase;
   background: #1f5132;
   transition: background 0.3s ease;
@@ -216,8 +222,9 @@
 
 @media (max-width: 480px) {
   .productCard {
-    padding: 5px; /* reduced padding for mobile */
-}
+    padding: 5px;
+    /* reduced padding for mobile */
+  }
 }
 
 @media (max-width: 480px) {
@@ -254,6 +261,7 @@
     text-decoration: none !important;
     margin-top: 4px;
     line-height: 1.4;
+    text-align: left;
   }
 }
 
@@ -262,12 +270,12 @@
   .whatsappBtn {
     padding: 6px 18px;
     font-size: 10px;
-    width:100%;
+    width: 100%;
     font-weight: 500;
     border-radius: 3px;
     background: #4c6437;
     color: #fff;
-    gap:4px;
+    gap: 4px;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
     transition: background 0.3s ease;
@@ -277,6 +285,7 @@
   }
 
   .whatsappBtn svg {
-    font-size: 14px; /* Resize icon if using react-icons */
+    font-size: 14px;
+    /* Resize icon if using react-icons */
   }
 }

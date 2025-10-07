@@ -102,10 +102,10 @@ const ProductSlider = () => {
 
                     <div className={styles.priceBox}>
                       <span className={styles.discountedPrice}>
-                        ₹{item.price}
+                        ${item.price}
                       </span>
                       <span className={styles.originalPrice}>
-                        ₹{item.mrp}
+                        ${item.mrp}
                       </span>
                     </div>
                   </div>

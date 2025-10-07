@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./productdetails.module.css";
 import { useParams } from "react-router-dom";
 import { getDatabase, ref, get } from "firebase/database";
-import { FaRegSmileBeam, FaWhatsapp } from "react-icons/fa";
+import {FaWhatsapp } from "react-icons/fa";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -72,12 +72,12 @@ const ProductDetails = () => {
               <span className={styles.oldPrice}>₹{product.mrp}</span>
             </div>
 
-            <div className={styles.featuresTag}>
+            {/* <div className={styles.featuresTag}>
               <FaRegSmileBeam style={{ marginRight: "8px", fontSize: "1rem" }} />
               <p>Products from our Care line bring out your inner radiance</p>
-            </div>
+            </div> */}
 
-            <div className={styles.icons}>
+            {/* <div className={styles.icons}>
               <div>
                 <img src="https://img.icons8.com/ios-filled/50/clock.png" alt="8 Hours" />
                 <span>8 Hours of Stay</span>
@@ -90,7 +90,7 @@ const ProductDetails = () => {
                 <img src="https://img.icons8.com/ios-filled/50/feather.png" alt="Lightweight" />
                 <span>Light-weight</span>
               </div>
-            </div>
+            </div> */}
 
             <div className={styles.description}>
               <p><strong>Short Description:</strong> {product.description}</p>

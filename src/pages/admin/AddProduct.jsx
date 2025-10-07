@@ -77,8 +77,8 @@ const AddProduct = () => {
   };
 
   const handleSave = () => {
-    const { name, slug, category, description, mrp, price } = product;
-    if (!name || !slug || !category || !description || !mrp || !price || !imageUrl) {
+    const { name, slug, category, mrp, price } = product;
+    if (!name || !slug || !category || !mrp || !price || !imageUrl) {
       alert('Please fill all required fields');
       return;
     }
@@ -156,7 +156,7 @@ const AddProduct = () => {
             </div>
           ))}
 
-          {['description', 'longDesc1', 'longDesc2', 'longDesc3'].map((desc, i) => (
+          {['description', 'longDesc1'].map((desc, i) => (
             <div key={i} className={styles.formGroup}>
               <label>{desc === 'description' ? 'Short Description' : `Long Description ${i}`}</label>
               <textarea
@@ -168,7 +168,7 @@ const AddProduct = () => {
           ))}
 
           <div className={styles.formGroup}>
-            <label>MRP</label>
+            <label>USD (Per Kilo)</label>
             <input
               type="number"
               value={product.mrp}
@@ -188,7 +188,7 @@ const AddProduct = () => {
           </div>
 
           <div className={styles.formGroup}>
-            <label>Price (auto-calculated)</label>
+            <label>Final Amount (auto-calculated)</label>
             <input
               type="number"
               value={product.price}
