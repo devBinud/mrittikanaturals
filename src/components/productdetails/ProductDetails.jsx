@@ -68,8 +68,8 @@ const ProductDetails = () => {
             </div>
 
             <div className={styles.priceBlock}>
-              <span className={styles.newPrice}>₹{product.price}</span>
-              <span className={styles.oldPrice}>₹{product.mrp}</span>
+              <span className={styles.newPrice}>${product.price}</span>
+              <span className={styles.oldPrice}>${product.mrp}</span>
             </div>
 
             {/* <div className={styles.featuresTag}>

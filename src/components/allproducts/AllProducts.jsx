@@ -135,10 +135,10 @@ const AllProducts = () => {
 
                     <div className={styles.priceBox}>
                       <span className={styles.discountedPrice}>
-                        MRP ${product.price}
+                      ${product.price}
                       </span>
                       <span className={styles.originalPrice}>
-                        MRP ${product.mrp}
+                        ${product.mrp}
                       </span>
                     </div>
                   </Link>
